@@ -1,3 +1,4 @@
+// or just use array flat and then simply sum them :) :) 
 
 interface anyAmountOfNesting<T> extends Array<anyAmountOfNesting<T> | T> { }
 function recursivelySumAnyAmountOfNestedNumbers<T>(inputs: anyAmountOfNesting<T>, sum: number = 0) {
