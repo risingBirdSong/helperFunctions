@@ -1,20 +1,20 @@
 // or just use array flat and then simply sum them :) :) 
 
 interface anyAmountOfNesting<T> extends Array<anyAmountOfNesting<T> | T> { }
-function recursivelySumAnyAmountOfNestedNumbers<T>(inputs: anyAmountOfNesting<T>, sum: number = 0) {
+function recursivelySumAnyAmountOfNestedNumbers<T>(inputs: anyAmountOfNesting<T>, sum: number = 0) : number {
   // check when inputs is empty to return the final sum
   if (inputs.length === 0) {
     console.log("its empty");
     return sum;
   }
   if (typeof inputs[0] === 'number') {
-    let aNum = inputs[0];
+    let aNum = inputs[0] as unknown as number;
     let sliced = inputs.slice(1);
     sum += aNum;
     return recursivelySumAnyAmountOfNestedNumbers(sliced, sum);
   }
   else if (inputs[0] instanceof Array) {
-    let grabbed = inputs[0];
+    let grabbed = inputs[0] as unknown as Array<T>;
     inputs = inputs.slice(1);
     let arranged = [...grabbed, ...inputs];;
     return recursivelySumAnyAmountOfNestedNumbers(arranged, sum);
