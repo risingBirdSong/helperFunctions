@@ -14,3 +14,6 @@ function iterateShortestArray (arrayA : any[], arrayB : any[]) {
 
 iterateShortestArray([1,2,3], [1,2,3,4,5,6,7,8]); //?
 iterateShortestArray([1,2,3,4,5,6,7,8], [1,2,3],); //?
+
+
+//why did i make these lol?
